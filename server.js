@@ -24,7 +24,7 @@ app.post(`/api/notes`, (req,res) =>{
 	newNote.id = uuidv4();
 	db.push(newNote);
 	fs.writeFileSync("./db/db.json" , JSON.stringify(db), (err) => {
-		if(err) throw err;
+	if(err) throw err;
 	});
 	res.send(db);
 })
@@ -32,7 +32,8 @@ app.post(`/api/notes`, (req,res) =>{
 app.delete(`/api/notes/:id` , (req, res)=> {
 	console.log(`Hitting the API/NOTES route (with delete request)`);
 
-  db.splice(db.indexOf(req.params.id), 1);
+  const removeIndex = db.findIndex( note => note.id === req.params.id );
+  db.splice(removeIndex, 1);
 	fs.writeFileSync("./db/db.json" , JSON.stringify(db), (err) => {
 		if(err) throw err;
 	});
