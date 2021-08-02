@@ -117,6 +117,11 @@ This homework is graded based on the following criteria:
 
 * Application allows users to delete notes.
 
+# help with :
+Jacob Guiro 
+Jessamyn 
+Tom McCarthey
+
 
 ## Review
 
